@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>utils/searx.sh &#8212; Searx Documentation (Searx-0.17.0.tex)</title>
+    <title>utils/searx.sh &#8212; Searx Documentation (Searx-0.18.0.tex)</title>
     <link rel="stylesheet" href="../_static/searx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/segment.min.css" />
@@ -40,7 +40,7 @@
         <li class="right" >
           <a href="index.html" title="Tooling box utils/*"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Searx Documentation (Searx-0.17.0.tex)</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Searx Documentation (Searx-0.18.0.tex)</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Tooling box <code class="docutils literal notranslate"><span class="pre">utils/*</span></code></a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><code class="docutils literal notranslate"><span class="pre">utils/searx.sh</span></code></a></li> 
       </ul>
@@ -80,7 +80,7 @@ into this user account.  The installation is described in chapter
 (<a class="reference internal" href="index.html#toolboxing-common"><span class="std std-ref">Common commands &amp; environment</span></a>):</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>usage::
   searx.sh shell
-  searx.sh install    [all|user|searx-src|pyenv|uwsgi|packages|buildhost]
+  searx.sh install    [all|user|searx-src|pyenv|uwsgi|packages|settings|buildhost]
   searx.sh update     [searx]
   searx.sh remove     [all|user|pyenv|searx-src]
   searx.sh activate   [service]
@@ -97,7 +97,7 @@ install / remove
   :searx-src:  clone https://github.com/searx/searx
   :pyenv:      create/remove virtualenv (python) in /usr/local/searx/searx-pyenv
   :uwsgi:      install searx uWSGI application
-  :settings:   reinstall settings from /home/runner/work/searx/searx/searx/settings.yml
+  :settings:   reinstall settings from /home/runner/work/searx/searx/utils/templates/etc/searx/use_default_settings.yml
   :packages:   install needed packages from OS package manager
   :buildhost:  install packages from OS package manager needed by buildhosts
 update searx

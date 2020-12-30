@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Tooling box utils/* &#8212; Searx Documentation (Searx-0.17.0.tex)</title>
+    <title>Tooling box utils/* &#8212; Searx Documentation (Searx-0.18.0.tex)</title>
     <link rel="stylesheet" href="../_static/searx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/segment.min.css" />
@@ -40,7 +40,7 @@
         <li class="right" >
           <a href="../dev/reST.html" title="reST primer"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Searx Documentation (Searx-0.17.0.tex)</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Searx Documentation (Searx-0.18.0.tex)</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Tooling box <code class="docutils literal notranslate"><span class="pre">utils/*</span></code></a></li> 
       </ul>
     </div>  
@@ -138,8 +138,12 @@ reverse proxy for filtron on all containers of the <a class="reference internal"
 <span class="c1"># ---------</span>
 
 <span class="c1"># SEARX_INTERNAL_URL=&quot;127.0.0.1:8888&quot;</span>
+<span class="c1"># SEARX_SETTINGS_TEMPLATE=&quot;${REPO_ROOT}/utils/templates/etc/searx/use_default_settings.yml&quot;</span>
 
-<span class="c1"># Only change, if you maintain a searx brand in your searx fork.</span>
+<span class="c1"># Only change, if you maintain a searx brand in your searx fork (GIT_URL) which</span>
+<span class="c1"># is not hold by branch &#39;master&#39;.  The branch has to be a local branch, in the</span>
+<span class="c1"># repository from which you install (which is most often the case).  If you want</span>
+<span class="c1"># to install branch &#39;foo&#39;, don&#39;t forget to run &#39;git branch foo origin/foo&#39; once.</span>
 <span class="c1"># GIT_BRANCH=&quot;${GIT_BRANCH:-master}&quot;</span>
 
 <span class="c1"># filtron.sh</span>

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Engines &#8212; Searx Documentation (Searx-0.17.0.tex)</title>
+    <title>Engines &#8212; Searx Documentation (Searx-0.18.0.tex)</title>
     <link rel="stylesheet" href="../_static/searx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/segment.min.css" />
@@ -20,7 +20,7 @@
     <script src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Plugins builtin" href="plugins.html" />
+    <link rel="next" title="Recoll" href="engines/recoll.html" />
     <link rel="prev" title="How to setup result proxy" href="morty.html" />
   <script>DOCUMENTATION_OPTIONS.URL_ROOT = '../';</script>
    
@@ -35,12 +35,12 @@
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="plugins.html" title="Plugins builtin"
+          <a href="engines/recoll.html" title="Recoll"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="morty.html" title="How to setup result proxy"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Searx Documentation (Searx-0.17.0.tex)</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Searx Documentation (Searx-0.18.0.tex)</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Administrator documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Engines</a></li> 
       </ul>
@@ -52,15 +52,26 @@
           <div class="body" role="main">
             
   <div class="section" id="engines">
-<span id="engines-generic"></span><h1>Engines<a class="headerlink" href="#engines" title="Permalink to this headline">¶</a></h1>
+<h1>Engines<a class="headerlink" href="#engines" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="special-engine-settings">
+<h2>Special Engine Settings<a class="headerlink" href="#special-engine-settings" title="Permalink to this headline">¶</a></h2>
 <div class="sidebar">
 <p class="sidebar-title">Further reading ..</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="settings.html#settings-engine"><span class="std std-ref">Engine settings</span></a></p></li>
-<li><p><a class="reference internal" href="../dev/engine_overview.html#engine-settings"><span class="std std-ref">settings.yml</span></a></p></li>
-<li><p><a class="reference internal" href="../dev/engine_overview.html#engine-file"><span class="std std-ref">engine file</span></a></p></li>
+<li><p><a class="reference internal" href="../dev/engine_overview.html#engine-settings"><span class="std std-ref">settings.yml</span></a> &amp; <a class="reference internal" href="../dev/engine_overview.html#engine-file"><span class="std std-ref">engine file</span></a></p></li>
 </ul>
 </div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="engines/recoll.html">Recoll</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="general-engine-settings">
+<span id="engines-generic"></span><h2>General Engine Settings<a class="headerlink" href="#general-engine-settings" title="Permalink to this headline">¶</a></h2>
+<p>Explanation of the <a class="reference internal" href="../dev/engine_overview.html#general-engine-configuration"><span class="std std-ref">general engine configuration</span></a> shown in the table
+<a class="reference internal" href="#configured-engines"><span class="std std-ref">Engines configured at built time (defaults)</span></a>.</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 23%" />
@@ -91,8 +102,8 @@
 </tr>
 <tr class="row-even"><td><p>Disabled</p></td>
 <td><p><strong>D</strong></p></td>
-<td><p>Offline</p></td>
-<td><p><strong>O</strong></p></td>
+<td><p>Engine type</p></td>
+<td><p><strong>ET</strong></p></td>
 </tr>
 <tr class="row-odd"><td><p>Safe search</p></td>
 <td><p><strong>SS</strong></p></td>
@@ -112,7 +123,6 @@
 </tr>
 </tbody>
 </table>
-<p>Configuration defaults (at built time):</p>
 <span id="configured-engines"></span><table class="docutils align-default" id="id1">
 <caption><span class="caption-number">Table 1 </span><span class="caption-text">Engines configured at built time (defaults)</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
 <colgroup>
@@ -142,7 +152,7 @@
 <th class="head"><p>SS</p></th>
 <th class="head"><p>D</p></th>
 <th class="head"><p>TR</p></th>
-<th class="head"><p>O</p></th>
+<th class="head"><p>ET</p></th>
 <th class="head"><p>W</p></th>
 <th class="head"><p>D</p></th>
 <th class="head"><p>DE</p></th>
@@ -159,7 +169,7 @@
 <td></td>
 <td><p>y</p></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
@@ -174,7 +184,7 @@
 <td></td>
 <td></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td></td>
 <td><p>y</p></td>
@@ -189,7 +199,7 @@
 <td></td>
 <td><p>y</p></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
@@ -204,7 +214,7 @@
 <td></td>
 <td></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td></td>
 <td><p>y</p></td>
@@ -219,7 +229,7 @@
 <td></td>
 <td></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td></td>
 <td><p>y</p></td>
@@ -234,7 +244,7 @@
 <td></td>
 <td></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td></td>
 <td><p>y</p></td>
@@ -249,7 +259,7 @@
 <td><p>y</p></td>
 <td></td>
 <td><p>y</p></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td></td>
 <td><p>y</p></td>
@@ -264,7 +274,7 @@
 <td></td>
 <td></td>
 <td><p>y</p></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td></td>
 <td><p>y</p></td>
@@ -279,7 +289,7 @@
 <td><p>y</p></td>
 <td></td>
 <td><p>y</p></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td></td>
 <td><p>y</p></td>
@@ -294,7 +304,7 @@
 <td></td>
 <td><p>y</p></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
@@ -309,7 +319,7 @@
 <td></td>
 <td></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td></td>
 <td><p>y</p></td>
@@ -324,7 +334,7 @@
 <td></td>
 <td><p>y</p></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
@@ -339,7 +349,7 @@
 <td></td>
 <td></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td></td>
 <td><p>y</p></td>
@@ -354,7 +364,7 @@
 <td></td>
 <td></td>
 <td></td>
-<td></td>
+<td><p>online_currency</p></td>
 <td><p>100</p></td>
 <td></td>
 <td><p>y</p></td>
@@ -369,7 +379,7 @@
 <td></td>
 <td></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td></td>
 <td><p>y</p></td>
@@ -384,7 +394,7 @@
 <td></td>
 <td></td>
 <td><p>y</p></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td></td>
 <td><p>y</p></td>
@@ -399,7 +409,7 @@
 <td></td>
 <td><p>y</p></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>2</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
@@ -414,7 +424,7 @@
 <td></td>
 <td></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td></td>
 <td><p>y</p></td>
@@ -429,7 +439,7 @@
 <td></td>
 <td><p>y</p></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
@@ -444,7 +454,7 @@
 <td></td>
 <td></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>2</p></td>
 <td></td>
 <td><p>y</p></td>
@@ -459,7 +469,7 @@
 <td></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
@@ -474,7 +484,7 @@
 <td><p>y</p></td>
 <td><p>y</p></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
@@ -489,7 +499,7 @@
 <td><p>y</p></td>
 <td><p>y</p></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
@@ -498,13 +508,13 @@
 <th class="stub"><p>!et</p></th>
 <td><p>xpath</p></td>
 <td><p>2.0</p></td>
-<td></td>
+<td><p>general</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
 <td></td>
 <td><p>y</p></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
@@ -512,14 +522,14 @@
 <tr class="row-even"><th class="stub"><p>1x</p></th>
 <th class="stub"><p>!1x</p></th>
 <td><p>www1x</p></td>
-<td><p>2.0</p></td>
+<td><p>3.0</p></td>
 <td><p>images</p></td>
 <td></td>
 <td><p>y</p></td>
 <td></td>
 <td><p>y</p></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
@@ -534,7 +544,7 @@
 <td></td>
 <td><p>y</p></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
@@ -549,7 +559,7 @@
 <td></td>
 <td></td>
 <td><p>y</p></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td></td>
 <td><p>y</p></td>
@@ -564,7 +574,7 @@
 <td></td>
 <td><p>y</p></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
@@ -579,7 +589,7 @@
 <td></td>
 <td><p>y</p></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
@@ -594,7 +604,7 @@
 <td></td>
 <td></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td></td>
 <td><p>y</p></td>
@@ -609,7 +619,7 @@
 <td><p>y</p></td>
 <td><p>y</p></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
@@ -624,7 +634,7 @@
 <td></td>
 <td></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td></td>
 <td><p>y</p></td>
@@ -639,7 +649,7 @@
 <td></td>
 <td><p>y</p></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
@@ -654,7 +664,7 @@
 <td></td>
 <td></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td></td>
 <td><p>y</p></td>
@@ -669,7 +679,7 @@
 <td></td>
 <td><p>y</p></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
@@ -684,7 +694,7 @@
 <td><p>y</p></td>
 <td></td>
 <td><p>y</p></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td></td>
 <td><p>y</p></td>
@@ -699,7 +709,7 @@
 <td><p>y</p></td>
 <td></td>
 <td><p>y</p></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td></td>
 <td><p>y</p></td>
@@ -714,7 +724,7 @@
 <td><p>y</p></td>
 <td></td>
 <td><p>y</p></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td></td>
 <td><p>y</p></td>
@@ -729,7 +739,7 @@
 <td><p>y</p></td>
 <td></td>
 <td><p>y</p></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td></td>
 <td><p>y</p></td>
@@ -744,7 +754,7 @@
 <td></td>
 <td></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td></td>
 <td><p>y</p></td>
@@ -759,7 +769,7 @@
 <td></td>
 <td><p>y</p></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
@@ -774,7 +784,7 @@
 <td></td>
 <td><p>y</p></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
@@ -789,7 +799,7 @@
 <td></td>
 <td><p>y</p></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
@@ -804,7 +814,7 @@
 <td></td>
 <td><p>y</p></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
@@ -819,7 +829,7 @@
 <td></td>
 <td><p>y</p></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
@@ -834,7 +844,7 @@
 <td></td>
 <td></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td></td>
 <td><p>y</p></td>
@@ -849,7 +859,7 @@
 <td></td>
 <td><p>y</p></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
@@ -862,11 +872,11 @@
 <td><p>y</p></td>
 <td><p>y</p></td>
 <td></td>
-<td></td>
 <td><p>y</p></td>
-<td></td>
+<td><p>y</p></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
-<td></td>
+<td><p>y</p></td>
 <td><p>y</p></td>
 </tr>
 <tr class="row-even"><th class="stub"><p>kickass</p></th>
@@ -879,7 +889,7 @@
 <td></td>
 <td><p>y</p></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
@@ -894,7 +904,7 @@
 <td></td>
 <td><p>y</p></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
@@ -909,7 +919,7 @@
 <td></td>
 <td><p>y</p></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
@@ -924,7 +934,7 @@
 <td></td>
 <td><p>y</p></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
@@ -939,7 +949,7 @@
 <td></td>
 <td></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td></td>
 <td><p>y</p></td>
@@ -954,7 +964,7 @@
 <td></td>
 <td></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td></td>
 <td><p>y</p></td>
@@ -969,7 +979,7 @@
 <td></td>
 <td><p>y</p></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
@@ -984,7 +994,7 @@
 <td></td>
 <td><p>y</p></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
@@ -999,7 +1009,7 @@
 <td></td>
 <td><p>y</p></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
@@ -1014,7 +1024,7 @@
 <td></td>
 <td></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td></td>
 <td><p>y</p></td>
@@ -1029,7 +1039,7 @@
 <td></td>
 <td></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td></td>
 <td><p>y</p></td>
@@ -1044,7 +1054,7 @@
 <td></td>
 <td></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td></td>
 <td><p>y</p></td>
@@ -1059,7 +1069,7 @@
 <td></td>
 <td><p>y</p></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
@@ -1074,7 +1084,7 @@
 <td></td>
 <td></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td></td>
 <td><p>y</p></td>
@@ -1089,7 +1099,7 @@
 <td></td>
 <td></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td></td>
 <td><p>y</p></td>
@@ -1104,7 +1114,7 @@
 <td></td>
 <td></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td></td>
 <td><p>y</p></td>
@@ -1119,7 +1129,7 @@
 <td></td>
 <td></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td></td>
 <td><p>y</p></td>
@@ -1134,7 +1144,7 @@
 <td></td>
 <td><p>y</p></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
@@ -1149,7 +1159,7 @@
 <td></td>
 <td></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td></td>
 <td><p>y</p></td>
@@ -1164,27 +1174,12 @@
 <td></td>
 <td></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td></td>
 <td><p>y</p></td>
 </tr>
-<tr class="row-even"><th class="stub"><p>qwant social</p></th>
-<th class="stub"><p>!qws</p></th>
-<td><p>qwant</p></td>
-<td><p>2.0</p></td>
-<td><p>social media</p></td>
-<td><p>y</p></td>
-<td><p>y</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>y</p></td>
-</tr>
-<tr class="row-odd"><th class="stub"><p>reddit</p></th>
+<tr class="row-even"><th class="stub"><p>reddit</p></th>
 <th class="stub"><p>!re</p></th>
 <td><p>reddit</p></td>
 <td><p>10.0</p></td>
@@ -1194,12 +1189,12 @@
 <td></td>
 <td><p>y</p></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
 </tr>
-<tr class="row-even"><th class="stub"><p>sepiasearch</p></th>
+<tr class="row-odd"><th class="stub"><p>sepiasearch</p></th>
 <th class="stub"><p>!sep</p></th>
 <td><p>sepiasearch</p></td>
 <td><p>2.0</p></td>
@@ -1209,12 +1204,12 @@
 <td><p>y</p></td>
 <td></td>
 <td><p>y</p></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td></td>
 <td><p>y</p></td>
 </tr>
-<tr class="row-odd"><th class="stub"><p>soundcloud</p></th>
+<tr class="row-even"><th class="stub"><p>soundcloud</p></th>
 <th class="stub"><p>!sc</p></th>
 <td><p>soundcloud</p></td>
 <td><p>2.0</p></td>
@@ -1224,12 +1219,12 @@
 <td></td>
 <td></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td></td>
 <td><p>y</p></td>
 </tr>
-<tr class="row-even"><th class="stub"><p>stackoverflow</p></th>
+<tr class="row-odd"><th class="stub"><p>stackoverflow</p></th>
 <th class="stub"><p>!st</p></th>
 <td><p>stackoverflow</p></td>
 <td><p>2.0</p></td>
@@ -1239,22 +1234,7 @@
 <td></td>
 <td></td>
 <td></td>
-<td></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>y</p></td>
-</tr>
-<tr class="row-odd"><th class="stub"><p>searchcode doc</p></th>
-<th class="stub"><p>!scd</p></th>
-<td><p>searchcode_doc</p></td>
-<td><p>2.0</p></td>
-<td><p>it</p></td>
-<td><p>y</p></td>
-<td><p>y</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td></td>
 <td><p>y</p></td>
@@ -1269,7 +1249,7 @@
 <td></td>
 <td><p>y</p></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
@@ -1284,7 +1264,7 @@
 <td></td>
 <td><p>y</p></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
@@ -1299,7 +1279,7 @@
 <td></td>
 <td></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td></td>
 <td><p>y</p></td>
@@ -1314,7 +1294,7 @@
 <td></td>
 <td><p>y</p></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
@@ -1329,7 +1309,7 @@
 <td></td>
 <td><p>y</p></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
@@ -1344,27 +1324,12 @@
 <td></td>
 <td></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td></td>
 <td><p>y</p></td>
 </tr>
-<tr class="row-even"><th class="stub"><p>twitter</p></th>
-<th class="stub"><p>!tw</p></th>
-<td><p>twitter</p></td>
-<td><p>2.0</p></td>
-<td><p>social media</p></td>
-<td></td>
-<td><p>y</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>y</p></td>
-</tr>
-<tr class="row-odd"><th class="stub"><p>unsplash</p></th>
+<tr class="row-even"><th class="stub"><p>unsplash</p></th>
 <th class="stub"><p>!us</p></th>
 <td><p>unsplash</p></td>
 <td><p>2.0</p></td>
@@ -1374,12 +1339,12 @@
 <td></td>
 <td><p>y</p></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
 </tr>
-<tr class="row-even"><th class="stub"><p>yahoo</p></th>
+<tr class="row-odd"><th class="stub"><p>yahoo</p></th>
 <th class="stub"><p>!yh</p></th>
 <td><p>yahoo</p></td>
 <td><p>2.0</p></td>
@@ -1389,12 +1354,12 @@
 <td></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
 </tr>
-<tr class="row-odd"><th class="stub"><p>yandex</p></th>
+<tr class="row-even"><th class="stub"><p>yandex</p></th>
 <th class="stub"><p>!yn</p></th>
 <td><p>yandex</p></td>
 <td><p>2.0</p></td>
@@ -1404,12 +1369,12 @@
 <td></td>
 <td><p>y</p></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
 </tr>
-<tr class="row-even"><th class="stub"><p>yahoo news</p></th>
+<tr class="row-odd"><th class="stub"><p>yahoo news</p></th>
 <th class="stub"><p>!yhn</p></th>
 <td><p>yahoo_news</p></td>
 <td><p>2.0</p></td>
@@ -1419,12 +1384,12 @@
 <td></td>
 <td></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td></td>
 <td><p>y</p></td>
 </tr>
-<tr class="row-odd"><th class="stub"><p>youtube</p></th>
+<tr class="row-even"><th class="stub"><p>youtube</p></th>
 <th class="stub"><p>!yt</p></th>
 <td><p>youtube_noapi</p></td>
 <td><p>2.0</p></td>
@@ -1434,24 +1399,9 @@
 <td></td>
 <td></td>
 <td><p>y</p></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td></td>
-<td><p>y</p></td>
-</tr>
-<tr class="row-even"><th class="stub"><p>yggtorrent</p></th>
-<th class="stub"><p>!ygg</p></th>
-<td><p>yggtorrent</p></td>
-<td><p>4.0</p></td>
-<td><p>videos, music, files</p></td>
-<td><p>y</p></td>
-<td><p>y</p></td>
-<td></td>
-<td><p>y</p></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>y</p></td>
 <td><p>y</p></td>
 </tr>
 <tr class="row-odd"><th class="stub"><p>dailymotion</p></th>
@@ -1464,7 +1414,7 @@
 <td></td>
 <td></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td></td>
 <td><p>y</p></td>
@@ -1479,7 +1429,7 @@
 <td></td>
 <td></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td></td>
 <td><p>y</p></td>
@@ -1494,7 +1444,7 @@
 <td></td>
 <td><p>y</p></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
@@ -1509,7 +1459,7 @@
 <td></td>
 <td><p>y</p></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
@@ -1524,7 +1474,7 @@
 <td></td>
 <td><p>y</p></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
@@ -1539,7 +1489,7 @@
 <td></td>
 <td><p>y</p></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
@@ -1554,7 +1504,7 @@
 <td></td>
 <td><p>y</p></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
@@ -1569,7 +1519,7 @@
 <td></td>
 <td><p>y</p></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
@@ -1584,7 +1534,7 @@
 <td></td>
 <td><p>y</p></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
@@ -1599,7 +1549,7 @@
 <td></td>
 <td></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td></td>
 <td><p>y</p></td>
@@ -1614,7 +1564,7 @@
 <td></td>
 <td></td>
 <td></td>
-<td></td>
+<td><p>online_dictionnary</p></td>
 <td><p>100</p></td>
 <td></td>
 <td><p>y</p></td>
@@ -1629,7 +1579,7 @@
 <td></td>
 <td><p>y</p></td>
 <td></td>
-<td></td>
+<td><p>online_dictionnary</p></td>
 <td><p>100</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
@@ -1644,7 +1594,7 @@
 <td></td>
 <td><p>y</p></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
@@ -1659,7 +1609,7 @@
 <td></td>
 <td><p>y</p></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
@@ -1674,7 +1624,7 @@
 <td></td>
 <td><p>y</p></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
@@ -1683,13 +1633,13 @@
 <th class="stub"><p>!szn</p></th>
 <td><p>xpath</p></td>
 <td><p>2.0</p></td>
-<td></td>
+<td><p>general</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
 <td></td>
 <td><p>y</p></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
@@ -1698,48 +1648,33 @@
 <th class="stub"><p>!mjk</p></th>
 <td><p>xpath</p></td>
 <td><p>2.0</p></td>
-<td></td>
+<td><p>general</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
 <td></td>
 <td><p>y</p></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
 </tr>
-<tr class="row-even"><th class="stub"><p>seedpeer</p></th>
-<th class="stub"><p>!speu</p></th>
-<td><p>seedpeer</p></td>
-<td><p>2.0</p></td>
-<td><p>files, music, videos</p></td>
-<td></td>
-<td><p>y</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>y</p></td>
-</tr>
-<tr class="row-odd"><th class="stub"><p>naver</p></th>
+<tr class="row-even"><th class="stub"><p>naver</p></th>
 <th class="stub"><p>!nvr</p></th>
 <td><p>xpath</p></td>
 <td><p>2.0</p></td>
-<td></td>
+<td><p>general</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
 <td></td>
 <td><p>y</p></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
 </tr>
-<tr class="row-even"><th class="stub"><p>rubygems</p></th>
+<tr class="row-odd"><th class="stub"><p>rubygems</p></th>
 <th class="stub"><p>!rbg</p></th>
 <td><p>xpath</p></td>
 <td><p>2.0</p></td>
@@ -1749,12 +1684,12 @@
 <td></td>
 <td><p>y</p></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
 </tr>
-<tr class="row-odd"><th class="stub"><p>peertube</p></th>
+<tr class="row-even"><th class="stub"><p>peertube</p></th>
 <th class="stub"><p>!ptb</p></th>
 <td><p>peertube</p></td>
 <td><p>2.0</p></td>
@@ -1764,13 +1699,14 @@
 <td></td>
 <td><p>y</p></td>
 <td></td>
-<td></td>
+<td><p>online</p></td>
 <td><p>1</p></td>
 <td><p>y</p></td>
 <td><p>y</p></td>
 </tr>
 </tbody>
 </table>
+</div>
 </div>
 
 
@@ -1804,7 +1740,7 @@
       <li><a href="index.html">Administrator documentation</a>
         <ul>
           <li>Previous: <a href="morty.html" title="previous chapter">How to setup result proxy</a>
-          <li>Next: <a href="plugins.html" title="next chapter">Plugins builtin</a></ul>
+          <li>Next: <a href="engines/recoll.html" title="next chapter">Recoll</a></ul>
       </li>
     </ul>
   </li>
